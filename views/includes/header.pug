@@ -1,8 +1,10 @@
 header
     a(href='#') Logo
     ul
+    each item in navLinks
         li
-            a(href='/') Home
-        li
-            a(href='/article') Article
+            if item.key == section
+                span #{item.label}
+            else
+                a(href=item.href) #{item.label}
 hr
